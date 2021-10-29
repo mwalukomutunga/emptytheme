@@ -1,7 +1,13 @@
 import React from 'react';
 import DataGrid, { Sorting, FilterPanel, Popup, HeaderFilter, Export, FilterRow, Editing, Selection, Paging, Pager } from 'devextreme-react/data-grid';
 import 'devextreme/dist/css/dx.light.css';
-const DataTable = ({ columns, dataSource, title, width, height,children }) => {
+const DataTable = ({ columns, dataSource, handlesave, title, width, height,children }) => {
+    const saving = (e)=>{  
+        handlesave(e.data); 
+    }
+    const deleterecord = (e)=>{  
+        handlesave(e.data); 
+    }
     const pageSizes = [10, 25, 50, 100];
     return (
         <DataGrid
@@ -11,12 +17,16 @@ const DataTable = ({ columns, dataSource, title, width, height,children }) => {
             showBorders={true}
             showRowLines={true}
             rowAlternationEnabled={false}
+            columnHidingEnabled={false}
+            onRowInserting={(e)=>saving(e)}
+            onRowRemoving={deleterecord}
         >
             <Editing            
                 mode="popup"
                 allowUpdating={true}
                 allowAdding={true}
-                allowDeleting={true}>
+                // allowDeleting={true}
+                >
                 <Popup title={title} showTitle={true} width={width} height={height} />
                 {children}
             </Editing>
@@ -25,7 +35,7 @@ const DataTable = ({ columns, dataSource, title, width, height,children }) => {
             <FilterRow visible={true} />
             <FilterPanel visible={true} />
             <HeaderFilter visible={true} />
-            <Pager allowedPageSizes={pageSizes} showPageSizeSelector={true} />
+            <Pager allowedPageSizes={pageSizes} showPageSizeSelector={true} showNavigationButtons={true}/>
             <Paging defaultPageSize={10} />
             <Export enabled={true} allowExportSelectedData={false} />
         </DataGrid>

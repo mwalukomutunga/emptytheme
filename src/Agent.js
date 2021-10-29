@@ -9,13 +9,16 @@ const requests= {
     del:(url)=>axios.delete(url).then(responseBody),
 }
 const Costs ={
-    list: ()=> requests.get('/costs')
+    list: ()=> requests.get('/costs'),
+    create: (body)=>requests.post('/productcosts',body)
 }
 const ValidityPeriod ={
-    list: ()=> requests.get('/validityperiod')
+    list: ()=> requests.get('/validityperiod'),
+    create: (body)=>requests.post('/validityperiod',body)
 }
 const valuechain ={
-    list: ()=> requests.get('/valuechain')
+    list: ()=> requests.get('/valuechain'),
+    create: (body)=>requests.post('/valuechain',body)
 }
 const insuranceItem ={
     list: ()=> requests.get('/insuranceitems')
