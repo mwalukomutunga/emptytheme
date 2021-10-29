@@ -2,12 +2,12 @@ import Base from "../base";
 import Content from "../components/content";
 import DataTable from "../components/Table";
 
-function ValueChain() {
+function Dashboard() {
 
     const columns = ['CompanyName', 'City', 'State', 'Phone', 'Fax'];
     return (
         <Base>
-            <Content Page="Value chain" >
+            <Content Page="Dashboard" >
                 <DataTable columns ={columns} dataSource ={
                     [{
                         "ID": 1,
@@ -136,4 +136,4 @@ function ValueChain() {
     );
 }
 
-export default ValueChain;
+export default Dashboard;
