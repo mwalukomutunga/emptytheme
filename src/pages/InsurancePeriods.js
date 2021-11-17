@@ -20,7 +20,7 @@ const InsurancePeriods = () => {
         agent.ValidityPeriod.create(e);
     }
 
-    const columns = ['periodName','dateFrom','dateTo'];
+    const columns = ['PeriodName','DateFrom','DateTo'];
     return (
         <Base>
             <Content Page="Insurance Periods" >
@@ -30,9 +30,9 @@ const InsurancePeriods = () => {
                     width={600}
                     height={350} >
                     <Form colCount={1}>
-                        <Item dataField="periodName" />
-                        <Item dataField="dateFrom" editorType="dxDateBox"  />
-                        <Item dataField="dateTo" editorType="dxDateBox"  />
+                        <Item dataField="PeriodName" />
+                        <Item dataField="DateFrom" editorType="dxDateBox"  />
+                        <Item dataField="DateTo" editorType="dxDateBox"  />
                     </Form>
                 </DataTable>
             </Content>

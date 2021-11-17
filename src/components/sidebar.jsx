@@ -66,11 +66,19 @@ const SideBar = (props) => {
                         </div>
                     </div>
                     <div className="menu-item">
-                        <NavLink to="/" className="menu-link">
+                        <NavLink to="/fcs" className="menu-link">
                             <div className="menu-icon">
                                 <i className="fab fa-simplybuilt"></i>
                             </div>
-                            <div className="menu-text">Product Config</div>
+                            <div className="menu-text">FCSs</div>
+                        </NavLink>
+                    </div>
+                    <div className="menu-item">
+                        <NavLink to="/fcstreams" className="menu-link">
+                            <div className="menu-icon">
+                                <i className="fab fa-simplybuilt"></i>
+                            </div>
+                            <div className="menu-text">FCS Streams</div>
                         </NavLink>
                     </div>
                     <div className="menu-item">

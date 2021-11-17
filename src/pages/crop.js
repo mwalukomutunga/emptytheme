@@ -13,14 +13,14 @@ const Crops = () => {
     useEffect(() => {
         agent.valuechain.list().then(response => {
             setvaluechain(response);
+            console.log(response);
         })
     }, []);
     const handleSave = (e) => {
-        console.log(e);
         agent.valuechain.create(e);
     }
 
-    const columns = ['name', 'variety'];
+    const columns = ['Name', 'Variety'];
     return (
         <Base>
             <Content Page="Value chain" >
@@ -30,8 +30,8 @@ const Crops = () => {
                     width={600}
                     height={250} >
                     <Form colCount={1}>
-                        <Item dataField="name" />
-                        <Item dataField="variety" />
+                        <Item dataField="Name" />
+                        <Item dataField="Variety" />
                     </Form>
                 </DataTable>
             </Content>

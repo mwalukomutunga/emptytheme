@@ -19,7 +19,7 @@ const InsuranceCosts = () => {
     const handleSave = (e) => {
         agent.Costs.create(e);
     }
-    const columns = ['name'];
+    const columns = ['Name'];
     return (
         <Base>
             <Content Page="Insurance extra costs" >
@@ -29,7 +29,7 @@ const InsuranceCosts = () => {
                     width={300}
                     height={250} >
                     <Form colCount={1}>
-                        <Item dataField="name" />
+                        <Item dataField="Name" />
                     </Form>
                 </DataTable>
             </Content>

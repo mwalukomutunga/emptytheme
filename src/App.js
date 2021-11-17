@@ -5,6 +5,8 @@ import InsuranceCosts from "./pages/insuranceCosts";
 import InsurancePeriods from "./pages/InsurancePeriods";
 import Dashboard from "./pages/Dashboard";
 import InsuranceItems from "./pages/insuranceItems";
+import FCS from "./pages/fcs";
+import FCSStreams from "./pages/streams";
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
       <Router basename="/" >
         <Switch>
           <Route exact  path="/" component={Dashboard} />
+          <Route exact  path="/fcs" component={FCS} />
+          <Route exact  path="/fcstreams" component={FCSStreams} />
           <Route exact path="/valuechain" component={Crops} />  
           <Route exact path="/items" component={InsuranceItems} />  
           <Route exact path="/costs" component={InsuranceCosts} />          
