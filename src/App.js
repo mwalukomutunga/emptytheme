@@ -7,11 +7,13 @@ import Dashboard from "./pages/Dashboard";
 import InsuranceItems from "./pages/insuranceItems";
 import FCS from "./pages/fcs";
 import FCSStreams from "./pages/streams";
+import Wrapper from "./components/wrapper";
 
 const App = () => {
   return (
     <>
       <Router basename="/" >
+       <Wrapper/>
         <Switch>
           <Route exact  path="/" component={Dashboard} />
           <Route exact  path="/fcs" component={FCS} />

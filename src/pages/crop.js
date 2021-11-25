@@ -13,7 +13,6 @@ const Crops = () => {
     useEffect(() => {
         agent.valuechain.list().then(response => {
             setvaluechain(response);
-            console.log(response);
         })
     }, []);
     const handleSave = (e) => {

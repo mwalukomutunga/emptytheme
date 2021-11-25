@@ -1,13 +1,20 @@
-function Wrapper({ children }) {
+import NavbarHeader from "./nav_header";
+import NavBar from "./navbar_nav";
+import SidebarBg from "./sidebar_bg";
+import AppHeader from "./appheader";
+import SideBar from "./sidebar";
+
+function Wrapper() {
     return (
-        <div id="app" className="app app-header-fixed app-sidebar-fixed">
-            {children}
+        <>
+            <AppHeader>
+                <NavbarHeader />
+                <NavBar />
+            </AppHeader>
+            <SideBar />
+            <SidebarBg />
 
-            <a href=";" className="btn btn-icon btn-circle btn-success btn-scroll-to-top"
-                data-toggle="scroll-to-top"><i className="fa fa-angle-up"></i></a>
-
-
-        </div>
+        </>
     );
 }
 
