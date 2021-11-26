@@ -1,8 +1,7 @@
-
-
 const Base = ({children}) => {
   return (
-    <>     
+    <> 
+    
        {children}
     </>
   );

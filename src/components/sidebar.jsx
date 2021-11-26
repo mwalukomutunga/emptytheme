@@ -39,7 +39,7 @@ const SideBar = (props) => {
                             <div className="menu-icon">
                                 <i className="fa fa-hdd"></i>
                             </div>
-                            <div className="menu-text">Settings</div>
+                            <div className="menu-text">Digi Farm</div>
                             <div className="menu-caret"></div>
                         </NavLink>
                         <div className="menu-submenu">
@@ -65,7 +65,28 @@ const SideBar = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="menu-item">
+                    <div className="menu-item has-sub">
+                        <NavLink to="/" className="menu-link">
+                            <div className="menu-icon">
+                                <i className="fa fa-hdd"></i>
+                            </div>
+                            <div className="menu-text">FTMA</div>
+                            <div className="menu-caret"></div>
+                        </NavLink>
+                        <div className="menu-submenu">
+                            <div className="menu-item">
+                                <NavLink to="/fcs" className="menu-link">
+                                    <div className="menu-text">FSCs</div>
+                                </NavLink>
+                            </div>
+                            <div className="menu-item">
+                                <NavLink to="/fcstreams" className="menu-link">
+                                    <div className="menu-text">FCS Streams</div>
+                                </NavLink>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <div className="menu-item">
                         <NavLink to="/fcs" className="menu-link">
                             <div className="menu-icon">
                                 <i className="fab fa-simplybuilt"></i>
@@ -80,7 +101,7 @@ const SideBar = (props) => {
                             </div>
                             <div className="menu-text">FCS Streams</div>
                         </NavLink>
-                    </div>
+                    </div> */}
                     <div className="menu-item">
                         <NavLink to="/" className="menu-link">
                             <div className="menu-icon">
