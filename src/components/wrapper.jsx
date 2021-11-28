@@ -13,7 +13,6 @@ function Wrapper() {
             </AppHeader>
             <SideBar />
             <SidebarBg />
-
         </>
     );
 }

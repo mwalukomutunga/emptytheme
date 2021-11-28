@@ -12,6 +12,7 @@ import DataGrid, {
 } from 'devextreme-react/data-grid';
 
 import RenderDetail from "../features/renderDetail";
+import Base from "../base";
 
 const InsuranceItems = () => {
     const [insuranceitems, setinsuranceitems] = useState([]);
@@ -48,6 +49,7 @@ const InsuranceItems = () => {
 
     // const columns = ['Id', 'LOCATION', 'VALUECHAIN', 'ExpectedYieldperAcre', 'CostofproductionperAcre', 'PREMIUMRATE'];
     return (
+        <Base>
             <Content Page="Insurance Items" >
                 <DataGrid
                     id="grid-container"
@@ -59,7 +61,7 @@ const InsuranceItems = () => {
                     showRowLines={true}
                     rowAlternationEnabled={false}
                     columnHidingEnabled={false}
-                    Costs ={Costs}
+                    Costs={Costs}
                 >
                     <Editing
                         mode="popup"
@@ -76,12 +78,13 @@ const InsuranceItems = () => {
                     <Column dataField="ExpectedYieldperAcre" />
                     <Column dataField="CostofproductionperAcre" />
                     <Column dataField="PREMIUMRATE" />
-                   
-                    <MasterDetail    enabled={true} render={RenderDetail} >
-                        
+
+                    <MasterDetail enabled={true} render={RenderDetail} >
+
                     </MasterDetail>
                 </DataGrid>
             </Content>
+        </Base>
     );
 }
 

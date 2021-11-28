@@ -1,8 +1,10 @@
-const Base = ({children}) => {
+import Wrapper from "./components/wrapper";
+const Base = ({ children }) => {
   return (
-    <> 
-    
-       {children}
+    <>
+   
+      {children}
+      
     </>
   );
 }

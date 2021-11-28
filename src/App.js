@@ -12,8 +12,9 @@ import Wrapper from "./components/wrapper";
 const App = () => {
   return (
     <>
-      <Router basename="/" >
-       <Wrapper/>
+      <Router  >    
+      <div id="app" className="app app-header-fixed app-sidebar-fixed">
+      <Wrapper/>   
         <Switch>
           <Route exact  path="/" component={Dashboard} />
           <Route exact  path="/fcs" component={FCS} />
@@ -23,7 +24,10 @@ const App = () => {
           <Route exact path="/costs" component={InsuranceCosts} />          
           <Route exact path="/periods" component={InsurancePeriods} />          
           <Route component={Dashboard} />
-        </Switch>       
+        </Switch>   
+        <a href=";" className="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i
+          className="fa fa-angle-up"></i></a>
+    </div>    
       </Router>
       </>
   );
