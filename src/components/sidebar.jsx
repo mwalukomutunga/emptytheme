@@ -17,7 +17,7 @@ const SideBar = (props) => {
                             <div className="menu-profile-info">
                                 <div className="d-flex align-items-center">
                                     <div className="flex-grow-1">
-                                        Sean Ngu
+                                       Admin
                                     </div>
                                     {/* <div className="menu-caret ms-auto"></div> */}
                                 </div>

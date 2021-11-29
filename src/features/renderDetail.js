@@ -5,17 +5,15 @@ import { SelectBox } from 'devextreme-react/select-box';
 import agent from "../Agent";
 import { Link } from "react-router-dom";
 import swal from 'sweetalert';
-
-
-
-const RenderDetail = (data, children) => {
+const RenderDetail = (data,children) => {
     let values = { Name: null, Value: 1, PremiumType: 1, ValueType: 2 }
     const buttonOptions = {
         text: 'Add',
         type: 'success',
         useSubmitBehavior: true,
         onClick: function (e) {
-            agent.Costs.AddCostItem(data.key, values)
+            agent.Costs.AddCostItem(data.key, values);
+            swal("Item added sucessfully.");
         }
     };
     const TypeChanged = (e) => {
@@ -32,10 +30,11 @@ const RenderDetail = (data, children) => {
     const ValueTypes = [{ Id: 1, name: "Flat" }, { Id: 2, name: "Percent" }];
 
     return (
-
+        
         <div className="employee-info">
             <div className="row">
                 <div className="col">
+                {children}
                     <div className="table-responsive">
                         <table className="table table-striped table-bordered table-sm">
                             <thead>
@@ -46,13 +45,12 @@ const RenderDetail = (data, children) => {
                                     <th data-orderable="false">Value</th>
                                     <th data-orderable="false">Action</th>
                                 </tr>
-                            </thead>
+                            </thead>                            
                             <CostList Id={data.key} costs={data.row.data.costs} />
                         </table>
                     </div>
                 </div>
-                <div className="col">
-                    {children}
+                <div className="col">                   
                     <div className="form-container">
                         <Form
                             formData={values}
@@ -105,7 +103,7 @@ function CostList(props) {
           .then((willDelete) => {
             if (willDelete) {
                 agent.Costs.DeleteCostItem(Id, e);
-              swal("Poof! Your imaginary file has been deleted!", {
+              swal("Poof! Your file has been deleted!", {
                 icon: "success",
               });
             }
@@ -113,7 +111,7 @@ function CostList(props) {
         
     }
 
-    const listItems = list.map((item, index) =>
+    const listItems = list?.map((item, index) =>
         <tr key={index}>
             <td>{item.name}</td>
             <td>{item.PremiumType}</td>
