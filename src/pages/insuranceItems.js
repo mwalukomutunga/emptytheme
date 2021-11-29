@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import agent from "../Agent";
 import Content from "../components/content";
 import "../features/itemcss.css";
+import Form, { SimpleItem, ButtonItem } from 'devextreme-react/form';
+import { SelectBox } from 'devextreme-react/select-box';
 //import { Form } from 'devextreme-react/data-grid';
 import DataGrid, {
     Column,
@@ -47,12 +49,16 @@ const InsuranceItems = () => {
         e.component.expandRow(e.currentSelectedRowKeys[0]);
     }
 
-    // const columns = ['Id', 'LOCATION', 'VALUECHAIN', 'ExpectedYieldperAcre', 'CostofproductionperAcre', 'PREMIUMRATE'];
+    const columns = ['Id', 'LOCATION', 'VALUECHAIN', 'ExpectedYieldperAcre', 'CostofproductionperAcre', 'PREMIUMRATE'];
     return (
         <Base>
             <Content Page="Insurance Items" >
                 <DataGrid
                     id="grid-container"
+                    columnsAutoWidth="true"
+                    defaultColumns={columns}
+                    showBorders={true}
+                    showRowLines={true}
                     dataSource={insuranceitems}
                     keyExpr="Id"
                     onSelectionChanged={selectionChanged}
@@ -69,18 +75,27 @@ const InsuranceItems = () => {
                         allowAdding={true}
                         allowDeleting={true}
                     >
-                        <Popup title="Test" width={500} height={400} />
-
+                        <Popup title="Insurance Item" showTitle={true} width={800} height={500} />
+                        <Form colCount={1}>
+                            <SimpleItem dataField="Name" />
+                            <SimpleItem dataField="Location" />
+                            <SimpleItem dataField="ValueChain" />
+                            <SimpleItem dataField="ExpectedYieldperAcre" />
+                            <SimpleItem dataField="CostOfProductionPerAcre" />
+                            <SimpleItem dataField="PREMIUMRATE" />
+                        </Form>
                     </Editing>
                     <Selection mode="single" />
-                    <Column dataField="LOCATION" />
-                    <Column dataField="VALUECHAIN" />
+                    {/* <Column dataField="Name" />
+                    <Column dataField="Location" />
+                    <Column dataField="ValueChain" />
                     <Column dataField="ExpectedYieldperAcre" />
-                    <Column dataField="CostofproductionperAcre" />
+                    <Column dataField="CostOfProductionPerAcre" />
                     <Column dataField="PREMIUMRATE" />
-
+                    <SimpleItem dataField="Cost" >
+                        <SelectBox dataSource="/data/countries" displayExpr="Name" />
+                    </SimpleItem> */}
                     <MasterDetail enabled={true} render={RenderDetail} >
-
                     </MasterDetail>
                 </DataGrid>
             </Content>
